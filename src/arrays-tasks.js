@@ -128,8 +128,13 @@ function getStringsLength(arr) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  let average =
+    arr.length > 0 ? arr.reduce((acc, curr) => acc + curr) / arr.length : 0;
+  if (average % 1 !== 0) {
+    average = average.toFixed(2);
+  }
+  return +average;
 }
 
 /**
